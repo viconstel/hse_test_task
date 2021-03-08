@@ -1,0 +1,87 @@
+swagger: '2.0'
+info:
+  title: XLSX/CSV files processing service
+  version: '1.0'
+  description: This service process XLSX/CSV files and store it to the PostgreSQL database.
+basePath: /
+paths:
+  /upload/:
+    get:
+      responses:
+        '200':
+          description: Success
+      summary: GET method that renders home page
+      operationId: get_upload_demo
+      produces:
+        - text/html
+      tags:
+        - upload
+    post:
+      responses:
+        '200':
+          description: Success
+          headers:
+            Content-Type:
+              description: text/html
+              type: string
+        '422':
+          description: Error while processing data
+          headers:
+            Content-Type:
+              description: application/json
+              type: string
+        '500':
+          description: Internal Server Error
+          headers:
+            Content-Type:
+              description: application/json
+              type: string
+      summary: POST method to upload file and put it into database
+      operationId: post_upload_demo
+      parameters:
+        - name: '--file'
+          in: formData
+          type: file
+          required: true
+          description: File to upload into the database.
+        - name: '--col'
+          in: query
+          type: array
+          description: List of new column names in correct order as a comma-separated string. The number of names must match the number of columns in the existing file.
+          items:
+            type: string
+          collectionFormat: csv
+        - name: '--head'
+          in: query
+          type: integer
+          description: Row number to use as the column names (header).
+        - name: '--index'
+          in: query
+          type: array
+          description: List of column names to set index on it (as a comma-separated string).
+          items:
+            type: string
+          collectionFormat: csv
+        - name: '--type'
+          in: query
+          type: string
+          description: 'Set data type to the column(s). Argument is a dictionary {''column name'': ''type''}. Available types: int, float, str, datetime.'
+      produces:
+        - text/html
+        - application/json
+      consumes:
+        - multipart/form-data
+      tags:
+        - upload
+produces:
+  - application/json
+consumes:
+  - application/json
+tags:
+  - name: upload
+    description: Upload name space.
+responses:
+  ParseError:
+    description: When a mask can't be parsed
+  MaskError:
+    description: When any error occurs on mask

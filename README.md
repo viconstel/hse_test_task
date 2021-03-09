@@ -16,13 +16,13 @@ and column data types match. Optionally, you can set
 the index on the specified columns.
 
 ## Launch
-1. Clone this repository
+1. Clone this repository: `https://github.com/viconstel/hse_test_task.git`
 2. Open bash and run commands:
 ```
-- cd `path-to-project-directory`/
+- cd `path-to-project-directory`
 - python3 -m venv `environment-name`
 - source  `environment-name`/bin/activate
-- pip install requirements.txt
+- pip install -r requirements.txt
 - FLASK_APP=bin/app.py flask run
 ```
 

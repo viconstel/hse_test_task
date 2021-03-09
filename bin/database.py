@@ -2,7 +2,7 @@ from typing import Union
 
 from sqlalchemy import create_engine
 
-from utils import read_config
+from .utils import read_config
 
 
 CONFIG_PATH = '../config/config.yml'

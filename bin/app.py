@@ -14,9 +14,9 @@ from flask_restplus.reqparse import ParseResult
 from sqlalchemy.exc import SQLAlchemyError, OperationalError, ProgrammingError
 from dateutil.parser import ParserError
 
-from parser import setup_parser
-from database import DataBase
-from utils import is_date
+from .parser import setup_parser
+from .database import DataBase
+from .utils import is_date
 
 
 JSON_HEADER = {'Content-Type': 'application/json'}

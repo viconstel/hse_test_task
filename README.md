@@ -35,7 +35,7 @@ returns a HTML-file.<br> Responses: <br>
 **POST** - method to upload file and put it 
 into the database. <br> Parameters: <br>
 ```
---file - file (.csv or .xlsx) to upload. Required parameter.
+file - file (.csv or .xlsx) to upload. Required parameter.
 --col - list of new column names in correct order as a comma-separated string. The number of names must match the number of columns in the existing file.
 --head - row number to use as the column names (header), integer.
 --index - list of column names to set index on it (as a comma-separated string).
@@ -72,11 +72,11 @@ postgres_db:
   # Database name
   database_name: db_name
   # Username  
-  user: admin
+  user: username
   # Password
   password: *****
   # Database host
   host: localhost
   # Database port
-  port: 5432
+  port: 0000
 ```

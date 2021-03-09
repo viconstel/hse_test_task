@@ -9,7 +9,7 @@ def setup_parser(parser: RequestParser) -> RequestParser:
     :param parser: app arguments parser
     :return: customized parser
     """
-    parser.add_argument('--file', location='files', type=FileStorage,
+    parser.add_argument('file', location='files', type=FileStorage,
                         required=True, dest='file',
                         help='File to upload into the database.')
 

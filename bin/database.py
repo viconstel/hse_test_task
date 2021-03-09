@@ -1,3 +1,4 @@
+import os
 from typing import Union
 
 from sqlalchemy import create_engine
@@ -15,7 +16,8 @@ class DataBase:
 
     def __init__(self) -> None:
         """Class initializer"""
-        conf = read_config(CONFIG_PATH)['postgres_db']
+        dir_name = os.path.dirname(os.path.abspath(__file__))
+        conf = read_config(os.path.join(dir_name, CONFIG_PATH))['postgres_db']
         conn_string = DB_STRING.format(user=conf['user'],
                                        password=conf['password'],
                                        host=conf['host'],

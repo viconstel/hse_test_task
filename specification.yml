@@ -39,7 +39,7 @@ paths:
       summary: POST method to upload file and put it into database
       operationId: post_upload_demo
       parameters:
-        - name: '--file'
+        - name: file
           in: formData
           type: file
           required: true

@@ -16,7 +16,7 @@ and column data types match. Optionally, you can set
 the index on the specified columns.
 
 ## Launch
-1. Clone this repository: `https://github.com/viconstel/hse_test_task.git`
+1. Clone this repository: `https://git.miem.hse.ru/220/rfid-recommendation-system.git`
 2. Open bash and run commands:
 ```
 - cd `path-to-project-directory`

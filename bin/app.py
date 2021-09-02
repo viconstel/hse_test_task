@@ -26,7 +26,7 @@ HTML_HEADER = {'Content-Type': 'text/html'}
 # App settings
 app = Flask(__name__)
 app.config['UPLOAD_EXTENSIONS'] = ['.xlsx', '.csv']
-app.secret_key = '12345'
+app.secret_key = 'YOUR SECRET KEY'
 
 api = Api(app=app,
           version="1.0",
